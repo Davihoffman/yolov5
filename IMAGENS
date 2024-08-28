@@ -1,0 +1,26 @@
+git clone https://github.com/ultralytics/yolov5 cd yolov5
+pip install -r requirements.txt
+python train.py --img-size 640 --batch-size 16 --epochs 50 --data data.yaml --weights yolov5s.pt --cache
+dataset/
+├── images/
+│   ├── train/
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   │   └── ...
+│   ├── val/
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   │   └── ...
+└── labels/
+    ├── train/
+    │   ├── image1.txt
+    │   ├── image2.txt
+    │   └── ...
+    └── val/
+        ├── image1.txt
+        ├── image2.txt
+        └── ...
+train: dataset/images/train
+val: dataset/images/val
+nc: 2  # Número de classes
+names: ['tesoura', 'faca']  # Nomes das classes
